@@ -16,7 +16,7 @@ public class SutuoController extends BaseController {
 	@Resource
 	private SutuoService sutuoService;
 	
-	@RequestMapping("sutuosInfo")
+	@RequestMapping("/sutuosInfo")
 	public String getSutuos(HttpServletRequest request, Model model) {
 		List<Sutuo> sutuos = sutuoService.getSutuos(getSessionUser(request));
 		if(sutuos != null && sutuos.size() > 0) {

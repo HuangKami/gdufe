@@ -16,11 +16,13 @@
 <meta http-equiv="expires" content="0">
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
+<link href="css/table.css" rel='stylesheet' type='text/css' />
 </head>
 
 <body>
-	<table border="1px">
-		<tr>
+	<div class="title">用户信息</div>
+	<table id="Main">
+		<tr class="tbTitle">
 			<th>姓名</th>
 			<th>姓名拼音</th>
 			<th>性别</th>
@@ -32,7 +34,7 @@
 			<th>专业</th>
 			<th>班级</th>
 		</tr>
-		<tr>
+		<tr class="tbContext">
 			<td>${user.name}</td>
 			<td>${user.namePy}</td>
 			<td>${user.sex}</td>

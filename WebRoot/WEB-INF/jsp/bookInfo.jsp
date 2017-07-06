@@ -17,6 +17,7 @@
 <meta http-equiv="expires" content="0">
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
+<link href="css/table.css" rel='stylesheet' type='text/css' />
 <script type="text/javascript">
 	var noBookInfo = "${noBookInfo}";
 	if (noBookInfo != "") {
@@ -26,9 +27,9 @@
 </head>
 
 <body>
-	<table border="1px">
-		<tr>
-		<tr>
+	<div class="title">书籍信息</div>
+	<table id="Main">
+		<tr class="tbTitle">
 			<th>书名</th>
 			<th>序列号</th>
 			<th>库藏总数量</th>
@@ -38,7 +39,7 @@
 			<th>查看详细内容</th>
 		</tr>
 		<c:forEach var="bookInfo" items="${bookInfos}">
-			<tr>
+			<tr class="tbContext">
 				<td>${bookInfo.name}</td>
 				<td>${bookInfo.serial}</td>
 				<td>${bookInfo.numAll}</td>

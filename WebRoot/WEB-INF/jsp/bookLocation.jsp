@@ -17,6 +17,7 @@
 <meta http-equiv="expires" content="0">
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
+<link href="css/table.css" rel='stylesheet' type='text/css' />
 <script type="text/javascript">
 	var noBookLocation = "${noBookLocation}";
 	if (noBookLocation != "") {
@@ -26,9 +27,9 @@
 </head>
 
 <body>
-	<table border="1px">
-		<tr>
-		<tr>
+	<div class="title">书籍详细信息</div>
+	<table id="Main">
+		<tr class="tbTitle">
 			<th>条码号</th>
 			<th>序列号</th>
 			<th>年卷期</th>
@@ -36,7 +37,7 @@
 			<th>可借状态</th>
 		</tr>
 		<c:forEach var="bookLocation" items="${bookLocations}">
-			<tr>
+			<tr class="tbContext">
 			<td>${bookLocation.barId}</td>
 			<td>${bookLocation.serial}</td>
 			<td>${bookLocation.volume}</td>

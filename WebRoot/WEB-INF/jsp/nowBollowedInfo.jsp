@@ -17,6 +17,7 @@
 <meta http-equiv="expires" content="0">
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
+<link href="css/table.css" rel='stylesheet' type='text/css' />
 <script type="text/javascript">
 	var noNowData = "${noNowData}";
 	if (noNowData != "") {
@@ -26,9 +27,9 @@
 </head>
 
 <body>
-	<table border="1px">
-		<tr>
-		<tr>
+	<div class="title">当前借阅</div>
+	<table id="Main">
+		<tr class="tbTitle">
 			<th>条码号</th>
 			<th>书名</th>
 			<th>作者</th>
@@ -38,7 +39,7 @@
 			<th>馆藏地</th>
 		</tr>
 		<c:forEach var="bookBollowed" items="${bookBolloweds}">
-			<tr>
+			<tr class="tbContext">
 				<td>${bookBollowed.barId}</td>
 				<td>${bookBollowed.name}</td>
 				<td>${bookBollowed.author}</td>

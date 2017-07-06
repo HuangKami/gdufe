@@ -17,6 +17,7 @@
 <meta http-equiv="expires" content="0">
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
+<link href="css/table.css" rel='stylesheet' type='text/css' />
 <script type="text/javascript">
 	var noGrades = "${noGrades}";
 	if (noGrades != "") {
@@ -26,15 +27,15 @@
 </head>
 
 <body>
-	<table border="1px">
-		<tr>
-		<tr>
+	<div class="title">素拓信息</div>
+	<table id="Main">
+		<tr class="tbTitle">
 			<th>素拓模块名</th>
 			<th>所需最少学分</th>
 			<th>已修学分</th>
 		</tr>
 		<c:forEach var="sutuo" items="${sutuos}">
-		<tr>
+		<tr class="tbContext">
 			<td>${sutuo.name}</td>
 			<td>${sutuo.requireScore}</td>
 			<td>${sutuo.score}</td>

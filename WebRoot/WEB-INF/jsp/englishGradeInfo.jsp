@@ -17,6 +17,7 @@
 <meta http-equiv="expires" content="0">
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
+<link href="css/table.css" rel='stylesheet' type='text/css' />
 <script type="text/javascript">
 	var noEnglishGrades = "${noEnglishGrades}";
 	if (noEnglishGrades != "") {
@@ -26,9 +27,9 @@
 </head>
 
 <body>
-	<table border="1px">
-		<tr>
-		<tr>
+	<div class="title">四六级成绩</div>
+	<table id="Main">
+		<tr class="tbTitle">
 			<th>姓名</th>
 			<th>学校</th>
 			<th>英语四级/英语六级</th>
@@ -38,7 +39,7 @@
 			<th>阅读分数</th>
 			<th>写作分数</th>
 		</tr>
-		<tr>
+		<tr class="tbContext">
 			<td>${englishGrade.time}</td>
 			<td>${englishGrade.school}</td>
 			<td>${englishGrade.level}</td>

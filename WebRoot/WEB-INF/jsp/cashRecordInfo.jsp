@@ -17,6 +17,7 @@
 <meta http-equiv="expires" content="0">
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
+<link href="css/table.css" rel='stylesheet' type='text/css' />
 <script type="text/javascript">
 	var noCashRecord = "${noCashRecord}";
 	if (noCashRecord != "") {
@@ -26,16 +27,16 @@
 </head>
 
 <body>
-	<table border="1px">
-		<tr>
-		<tr>
+	<div class="title">校园卡交易记录</div>
+	<table id="Main">
+		<tr class="tbTitle">
 			<th>交易时间</th>
 			<th>交易商户</th>
 			<th>交易额</th>
 			<th>余额</th>
 		</tr>
 		<c:forEach var="cashRecord" items="${cashRecords}">
-			<tr>
+			<tr class="tbContext">
 				<td>${cashRecord.time}</td>
 				<td>${cashRecord.shop}</td>
 				<td>${cashRecord.change}</td>

@@ -578,12 +578,7 @@ ul#lightGallery {
 /* gallery */
 /*-- services --*/
 .services {
-    background: url(../images/background.jpg) no-repeat 0px 0px;
-	background-size: cover;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-    background-attachment: fixed;
+    background: url(../images/background.jpg);
 }
 .agile-heading h3{
     color: #fff;
@@ -600,8 +595,8 @@ ul#lightGallery {
 }
 .wthree-services-info{
     padding: 6em 0;
-    background: #FFFFFF;
-	background:rgba(0, 0, 0, 0.65);
+    background: url("../images/avtar.jpeg") no-repeat 3px 0px;
+    opacity: 0.7;
     text-align: center;
 }
 .wthree-services-info i.fa.fa-trophy,.wthree-services-info i.fa.fa-graduation-cap,.wthree-services-info i.fa.fa-black-tie,.wthree-services-info i.fa.fa-thumbs-o-up,.wthree-services-info i.fa.fa-calendar-minus-o,.wthree-services-info i.fa.fa-sun-o,.wthree-services-info i.fa.fa-percent,.wthree-services-info i.fa.fa-university{
@@ -609,10 +604,10 @@ ul#lightGallery {
 	color: #fff;
     font-size: 3em;
 }
-.wthree-services-info h4{
+.wthree-services-info h3{
     color: #00a99d;
 	color: #fc636b;
-    font-size: 1.2em;
+    font-size: 2em;
     margin: 1em 0 0 0;
     text-transform: uppercase;
     font-weight: 600;

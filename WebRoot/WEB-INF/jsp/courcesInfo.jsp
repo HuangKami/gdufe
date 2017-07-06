@@ -17,6 +17,7 @@
 <meta http-equiv="expires" content="0">
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
+<link href="css/table.css" rel='stylesheet' type='text/css' />
 <script type="text/javascript">
 	var noCourses = "${noCourses}";
 	if (noCourses != "") {
@@ -26,9 +27,9 @@
 </head>
 
 <body>
-	<table border="1px">
-		<tr>
-		<tr>
+	<div class="title">课程表</div>
+	<table id="Main">
+		<tr class="tbTitle">
 			<th>课程名</th>
 			<th>上课老师</th>
 			<th>上课周数</th>
@@ -38,7 +39,7 @@
 			<th>结束小节</th>
 		</tr>
 		<c:forEach var="course" items="${courses}">
-		<tr>
+		<tr class="tbContext">
 			<td>${course.name}</td>
 			<td>${course.teacher}</td>
 			<td>${course.period}</td>
