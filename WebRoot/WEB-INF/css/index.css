@@ -577,15 +577,17 @@ ul#lightGallery {
 }
 /* gallery */
 /*-- services --*/
-.services {
+body {
     background: url(../images/background.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
 }
 .agile-heading h3{
     color: #fff;
 	text-align:center;
 }
 .wthree-services-grids,.agileinfo-gallery,.agile-team-grids,.wthree-news-grids,.agile-contact-form{
-	margin:4em 0 0 0;
+	margin:2em 0 0 0;
 }
 .wthree-services-grid {
 	overflow: hidden;
@@ -595,28 +597,52 @@ ul#lightGallery {
 }
 .wthree-services-info{
     padding: 6em 0;
-    background: url("../images/avtar.jpeg") no-repeat 3px 0px;
-    opacity: 0.7;
     text-align: center;
+}
+.bg1 {
+	background: url("../images/001.jpg") no-repeat 1px 0;
+    opacity: 0.8;
+}
+.bg2 {
+	background: url("../images/002.jpg") no-repeat 1px 0;
+    opacity: 0.8;
+}
+.bg3 {
+	background: url("../images/003.jpg") no-repeat 1px 0;
+    opacity: 0.8;
+}
+.bg4 {
+	background: url("../images/004.jpg") no-repeat 1px 0;
+    opacity: 0.8;
+}
+.bg5 {
+	background: url("../images/005.jpg") no-repeat 1px 0;
+    opacity: 0.8;
+}
+.bg6 {
+	background: url("../images/006.jpg") no-repeat 1px 0;
+    opacity: 0.8;
+}
+.bg7 {
+	background: url("../images/007.jpg") no-repeat 1px 0;
+    opacity: 0.8;
+}
+.bg8 {
+	background: url("../images/008.jpg") no-repeat 1px 0;
+    opacity: 0.8;
 }
 .wthree-services-info i.fa.fa-trophy,.wthree-services-info i.fa.fa-graduation-cap,.wthree-services-info i.fa.fa-black-tie,.wthree-services-info i.fa.fa-thumbs-o-up,.wthree-services-info i.fa.fa-calendar-minus-o,.wthree-services-info i.fa.fa-sun-o,.wthree-services-info i.fa.fa-percent,.wthree-services-info i.fa.fa-university{
 	color: #212121;
 	color: #fff;
     font-size: 3em;
 }
-.wthree-services-info h3{
-    color: #00a99d;
+
+h3{
+	padding-top:80px;
 	color: #fc636b;
     font-size: 2em;
-    margin: 1em 0 0 0;
-    text-transform: uppercase;
+    margin: 1em 0 -55px 0;
     font-weight: 600;
-}
-.w3ls-border{
-    width: 30%;
-    margin: 1em auto 0;
-    border: double 4px #fc636b;
-    border: double 4px #00a99d;
 }
 .wthree-services-captn {
 	height: 100%;

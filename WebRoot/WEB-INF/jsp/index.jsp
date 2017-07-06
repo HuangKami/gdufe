@@ -21,20 +21,17 @@
 </head>
 
 <body>
+	<div class="agile-heading heading">
+		<h3 style="color:#fc636b">广财突突突</h3>
+	</div>
 	<div class="services" id="services">
-		<div style="float: right;">${user.name}</div>
 		<div class="container">
-			<div class="agile-heading heading">
-				<h3 style="color:#fc636b">广财突突突</h3>
-			</div>
 			<div class="wthree-services-grids">
 				<a href="userInfo">
 					<div class="col-sm-3 wthree-services">
 						<div class="wthree-services-grid">
-							<div class="wthree-services-info">
-								<i class="fa fa-trophy" aria-hidden="true"></i>
+							<div class="wthree-services-info bg1">
 								<h3>个人信息</h3>
-								<div class="w3ls-border"></div>
 							</div>
 							<div class="wthree-services-captn">
 								<h4>个人信息</h4>
@@ -45,10 +42,8 @@
 				</a> <a href="cashInfo">
 					<div class="col-sm-3 wthree-services">
 						<div class="wthree-services-grid">
-							<div class="wthree-services-info">
-								<i class="fa fa-graduation-cap" aria-hidden="true"></i>
+							<div class="wthree-services-info bg2">
 								<h3>校园卡</h3>
-								<div class="w3ls-border"></div>
 							</div>
 							<div class="wthree-services-captn">
 								<h4>校园卡</h4>
@@ -59,10 +54,8 @@
 				</a> <a href="grade">
 					<div class="col-sm-3 wthree-services">
 						<div class="wthree-services-grid">
-							<div class="wthree-services-info">
-								<i class="fa fa-black-tie" aria-hidden="true"></i>
+							<div class="wthree-services-info bg3">
 								<h3>成绩查询</h3>
-								<div class="w3ls-border"></div>
 							</div>
 							<div class="wthree-services-captn">
 								<h4>成绩查询</h4>
@@ -73,10 +66,8 @@
 				</a> <a href="library">
 					<div class="col-sm-3 wthree-services">
 						<div class="wthree-services-grid">
-							<div class="wthree-services-info">
-								<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+							<div class="wthree-services-info bg4">
 								<h3>图书馆服务</h3>
-								<div class="w3ls-border"></div>
 							</div>
 							<div class="wthree-services-captn">
 								<h4>图书馆服务</h4>
@@ -92,10 +83,8 @@
 				<a href="sutuosInfo">
 					<div class="col-sm-3 wthree-services">
 						<div class="wthree-services-grid">
-							<div class="wthree-services-info">
-								<i class="fa fa-calendar-minus-o" aria-hidden="true"></i>
+							<div class="wthree-services-info bg4"> 
 								<h3>素拓信息</h3>
-								<div class="w3ls-border"></div>
 							</div>
 							<div class="wthree-services-captn">
 								<h4>素拓信息</h4>
@@ -106,10 +95,8 @@
 				</a> <a href="#" onclick="return false;">
 					<div class="col-sm-3 wthree-services">
 						<div class="wthree-services-grid">
-							<div class="wthree-services-info">
-								<i class="fa fa-sun-o" aria-hidden="true"></i>
+							<div class="wthree-services-info bg6">
 								<h3>敬请期待</h3>
-								<div class="w3ls-border"></div>
 							</div>
 							<div class="wthree-services-captn">
 								<h4>敬请期待</h4>
@@ -120,10 +107,8 @@
 				</a> <a href="#" onclick="return false;">
 					<div class="col-sm-3 wthree-services">
 						<div class="wthree-services-grid">
-							<div class="wthree-services-info">
-								<i class="fa fa-percent" aria-hidden="true"></i>
+							<div class="wthree-services-info bg7">
 								<h3>敬请期待</h3>
-								<div class="w3ls-border"></div>
 							</div>
 							<div class="wthree-services-captn">
 								<h4>敬请期待</h4>
@@ -134,10 +119,8 @@
 				</a> <a href="#" onclick="return false;">
 					<div class="col-sm-3 wthree-services">
 						<div class="wthree-services-grid">
-							<div class="wthree-services-info">
-								<i class="fa fa-university" aria-hidden="true"></i>
+							<div class="wthree-services-info bg8">
 								<h3>敬请期待</h3>
-								<div class="w3ls-border"></div>
 							</div>
 							<div class="wthree-services-captn">
 								<h4>敬请期待</h4>

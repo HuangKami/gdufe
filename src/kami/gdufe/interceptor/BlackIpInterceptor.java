@@ -13,7 +13,7 @@ import kami.gdufe.utils.GetApplicationContext;
 
 public class BlackIpInterceptor implements HandlerInterceptor {
 	private Integer times = 30;
-	
+
 	/**
 	 * 过滤拦截黑名单IP
 	 */
@@ -22,29 +22,37 @@ public class BlackIpInterceptor implements HandlerInterceptor {
 			throws Exception {
 		ApplicationContext applicationContext = GetApplicationContext.getApplicationContext();
 		BlackListDao blackListDao = applicationContext.getBean("blackListDaoImpl", BlackListDaoImpl.class);
-		
+
+		String ip = getRemortIP(request);
 		/**
 		 * 判断用户是否在黑名单中
 		 */
-		if(blackListDao.isInBlackList(request.getRemoteAddr())) {
+		if (blackListDao.isInBlackList(ip)) {
 			request.getRequestDispatcher("/WEB-INF/jsp/error.jsp").forward(request, response);
 			return false;
 		}
-		
+
 		/**
 		 * 判断用户在限定时间内是否频繁访问
 		 */
-		if(blackListDao.findIp(request.getRemoteAddr()) > times) {
-			blackListDao.insertBlackList(request.getRemoteAddr());
+		if (blackListDao.findIp(ip) > times) {
+			blackListDao.insertBlackList(ip);
 			request.getRequestDispatcher("/WEB-INF/jsp/error.jsp").forward(request, response);
 			return false;
 		}
-		
+
 		/**
 		 * 验证通过
 		 */
-		blackListDao.InsertIp(request.getRemoteAddr());
+		blackListDao.InsertIp(ip);
 		return true;
+	}
+
+	private String getRemortIP(HttpServletRequest request) {
+		if (request.getHeader("x-forwarded-for") == null){
+			return request.getRemoteAddr();
+		}
+		return request.getHeader("x-forwarded-for");
 	}
 
 	@Override
