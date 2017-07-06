@@ -17,6 +17,14 @@ import kami.gdufe.service.GradeService;
 public class GradeController extends BaseController {
 	@Resource
 	private GradeService gradeServie;
+	
+	/**
+	 * 成绩首页
+	 */
+	@RequestMapping("/grade")
+	public String index() {
+		return "grade";
+	}
 
 	/**
 	 * 获取成绩

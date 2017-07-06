@@ -19,6 +19,11 @@ public class LibraryController extends BaseController {
 	@Resource
 	private LibraryService libraryService;
 
+	@RequestMapping("/library")
+	public String index() {
+		return "library";
+	}
+	
 	@RequestMapping("/hisBollowed")
 	public String getHisBollowed(HttpServletRequest request, Model model) {
 		List<BookBollowed> bookBolloweds = libraryService.getHisBolloweds(getSessionUser(request));

@@ -20,7 +20,7 @@ public class CashController extends BaseController {
 	/**
 	 * 查询余额
 	 */
-	@RequestMapping("cashInfo")
+	@RequestMapping("/cashInfo")
 	public String getCash(HttpServletRequest request, Model model) {
 		Cash cash = cashService.getCash(getSessionUser(request));
 		if(cash != null) {
@@ -34,7 +34,7 @@ public class CashController extends BaseController {
 	/**
 	 * 查询交易记录
 	 */
-	@RequestMapping("cashRecordInfo")
+	@RequestMapping("/cashRecordInfo")
 	public String getCashRecord(HttpServletRequest request, Model model) {
 		List<CashRecord> cashRecords = cashService.getCashRecord(getSessionUser(request));
 		if(cashRecords != null && cashRecords.size() > 0) {
