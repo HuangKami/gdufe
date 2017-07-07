@@ -577,9 +577,14 @@ ul#lightGallery {
 }
 /* gallery */
 /*-- services --*/
-body {
+.body1 {
     background: url(../images/background.jpg);
-    background-size:cover;
+    background-size:100% 100%;
+    background-repeat: no-repeat;
+}
+.body2 {
+	background: url(../images/background1.jpg);
+    background-size:100% 100%;
     background-repeat: no-repeat;
 }
 .agile-heading h3{
@@ -600,35 +605,51 @@ body {
     text-align: center;
 }
 .bg1 {
-	background: url("../images/001.jpg") no-repeat 1px 0;
+	background: url("../images/001.jpg");
+	background-size:100% 100%;
+    background-repeat: no-repeat;
     opacity: 0.8;
 }
 .bg2 {
-	background: url("../images/002.jpg") no-repeat 1px 0;
+	background: url("../images/002.jpg");
+	background-size:100% 100%;
+    background-repeat: no-repeat;
     opacity: 0.8;
 }
 .bg3 {
-	background: url("../images/003.jpg") no-repeat 1px 0;
+	background: url("../images/003.jpg");
+	background-size:100% 100%;
+    background-repeat: no-repeat;
     opacity: 0.8;
 }
 .bg4 {
-	background: url("../images/004.jpg") no-repeat 1px 0;
+	background: url("../images/004.jpg");
+	background-size:100% 100%;
+    background-repeat: no-repeat;
     opacity: 0.8;
 }
 .bg5 {
-	background: url("../images/005.jpg") no-repeat 1px 0;
+	background: url("../images/005.jpg");
+	background-size:100% 100%;
+    background-repeat: no-repeat;
     opacity: 0.8;
 }
 .bg6 {
-	background: url("../images/006.jpg") no-repeat 1px 0;
+	background: url("../images/006.jpg");
+	background-size:100% 100%;
+    background-repeat: no-repeat;
     opacity: 0.8;
 }
 .bg7 {
-	background: url("../images/007.jpg") no-repeat 1px 0;
+	background: url("../images/007.jpg");
+	background-size:100% 100%;
+    background-repeat: no-repeat;
     opacity: 0.8;
 }
 .bg8 {
-	background: url("../images/008.jpg") no-repeat 1px 0;
+	background: url("../images/008.jpg");
+	background-size:100% 100%;
+    background-repeat: no-repeat;
     opacity: 0.8;
 }
 .wthree-services-info i.fa.fa-trophy,.wthree-services-info i.fa.fa-graduation-cap,.wthree-services-info i.fa.fa-black-tie,.wthree-services-info i.fa.fa-thumbs-o-up,.wthree-services-info i.fa.fa-calendar-minus-o,.wthree-services-info i.fa.fa-sun-o,.wthree-services-info i.fa.fa-percent,.wthree-services-info i.fa.fa-university{
@@ -684,7 +705,7 @@ h3{
 
 /*-- staff--*/
 .team-grids,.contact form,div#portfoliowrap {
-    margin-top: 50px;
+    margin-top: 20px;
 }
 .team-grid h3 {
     color: #000;

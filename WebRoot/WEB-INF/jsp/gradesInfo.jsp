@@ -18,18 +18,13 @@
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
 <link href="css/table.css" rel='stylesheet' type='text/css' />
-<script type="text/javascript">
-	var noGrades = "${noGrades}";
-	if (noGrades != "") {
-		alert(noGrades);
-	}
-</script>
+<script type="text/javascript" src="js/jquery.js"></script>
 </head>
 
-<body>
+<body class="body1">
 	<div class="title">成绩</div>
 	<table id="Main">
-		<h2>平均绩点：${gpa}</h2>
+		<h3 style="text-align: center;color: rgba(127,255,255,0.75);">平均绩点：${gpa}</h3>
 		<tr class="tbTitle">
 			<th>开课学期</th>
 			<th>课程编号</th>
@@ -53,5 +48,12 @@
 			</tr>
 		</c:forEach>
 	</table>
+<script type="text/javascript">
+	var noGrades = "${noGrades}";
+	if (noGrades != "") {
+		alert(noGrades);
+	}
+</script>
 </body>
+<script type="text/javascript" src="js/common.js"></script>
 </html>

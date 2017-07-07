@@ -18,9 +18,10 @@
 <meta http-equiv="description" content="This is my page">
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <link href="css/index.css" rel='stylesheet' type='text/css' />
+<script type="text/javascript" src="js/jquery.js"></script>
 </head>
 
-<body>
+<body class="body1">
 	<div class="agile-heading heading">
 		<h3 style="color:#fc636b">广财突突突</h3>
 	</div>
@@ -31,7 +32,7 @@
 					<div class="col-sm-3 wthree-services">
 						<div class="wthree-services-grid">
 							<div class="wthree-services-info bg1">
-								<h3>个人信息</h3>
+								<h3 id="user" style="">个人信息</h3>
 							</div>
 							<div class="wthree-services-captn">
 								<h4>个人信息</h4>
@@ -43,7 +44,7 @@
 					<div class="col-sm-3 wthree-services">
 						<div class="wthree-services-grid">
 							<div class="wthree-services-info bg2">
-								<h3>校园卡</h3>
+								<h3 id="cash" style="">校园卡</h3>
 							</div>
 							<div class="wthree-services-captn">
 								<h4>校园卡</h4>
@@ -55,23 +56,23 @@
 					<div class="col-sm-3 wthree-services">
 						<div class="wthree-services-grid">
 							<div class="wthree-services-info bg3">
-								<h3>成绩查询</h3>
+								<h3 id="grade" style="">成绩查询</h3>
 							</div>
 							<div class="wthree-services-captn">
 								<h4>成绩查询</h4>
-								<p>点击查询期末成绩，四六级成绩等信息，突突突</p>
+								<p>点击查询期末成绩，突突突</p>
 							</div>
 						</div>
 					</div>
-				</a> <a href="library">
+				</a> <a href="#" onclick="return false;">
 					<div class="col-sm-3 wthree-services">
 						<div class="wthree-services-grid">
-							<div class="wthree-services-info bg4">
-								<h3>图书馆服务</h3>
+							<div class="wthree-services-info bg7">
+								<h3 id="english" style="">四六级查询</h3>
 							</div>
 							<div class="wthree-services-captn">
-								<h4>图书馆服务</h4>
-								<p>点击查询图书借阅历史记录，当前记录，续借，搜索图书信息，突突突</p>
+								<h4>四六级查询</h4>
+								<p>点击查询四六级成绩，突突突</p>
 							</div>
 						</div>
 					</div>
@@ -80,11 +81,23 @@
 			</div>
 
 			<div class="wthree-services-grids services-grids1">
-				<a href="sutuosInfo">
+				<a href="library">
 					<div class="col-sm-3 wthree-services">
 						<div class="wthree-services-grid">
-							<div class="wthree-services-info bg4"> 
-								<h3>素拓信息</h3>
+							<div class="wthree-services-info bg4">
+								<h3 id="library" style="">图书馆服务</h3>
+							</div>
+							<div class="wthree-services-captn">
+								<h4>图书馆服务</h4>
+								<p>点击查询图书借阅历史记录，当前记录，续借，搜索图书信息，突突突</p>
+							</div>
+						</div>
+					</div>
+				</a> <a href="sutuosInfo">
+					<div class="col-sm-3 wthree-services">
+						<div class="wthree-services-grid">
+							<div class="wthree-services-info bg5">
+								<h3 id="sutuo" style="">素拓信息</h3>
 							</div>
 							<div class="wthree-services-captn">
 								<h4>素拓信息</h4>
@@ -96,11 +109,11 @@
 					<div class="col-sm-3 wthree-services">
 						<div class="wthree-services-grid">
 							<div class="wthree-services-info bg6">
-								<h3>敬请期待</h3>
+								<h3 id="n1" style="">课程表</h3>
 							</div>
 							<div class="wthree-services-captn">
-								<h4>敬请期待</h4>
-								<p>敬请期待</p>
+								<h4>课程表</h4>
+								<p>点击查询课程表信息，突突突</p>
 							</div>
 						</div>
 					</div>
@@ -108,19 +121,7 @@
 					<div class="col-sm-3 wthree-services">
 						<div class="wthree-services-grid">
 							<div class="wthree-services-info bg7">
-								<h3>敬请期待</h3>
-							</div>
-							<div class="wthree-services-captn">
-								<h4>敬请期待</h4>
-								<p>敬请期待</p>
-							</div>
-						</div>
-					</div>
-				</a> <a href="#" onclick="return false;">
-					<div class="col-sm-3 wthree-services">
-						<div class="wthree-services-grid">
-							<div class="wthree-services-info bg8">
-								<h3>敬请期待</h3>
+								<h3 id="n2" style="">敬请期待</h3>
 							</div>
 							<div class="wthree-services-captn">
 								<h4>敬请期待</h4>
@@ -134,4 +135,22 @@
 		</div>
 	</div>
 </body>
+<script type="text/javascript">
+	var system = {};
+	var p = navigator.platform;
+	system.win = p.indexOf("Win") == 0;
+	system.mac = p.indexOf("Mac") == 0;
+	system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+	if (!(system.win || system.mac || system.xll)) { //如果是手机
+		$("body").attr("class", "body2");
+		$("#user").attr("style","padding-top:60px;margin: 1em 0 -40px 0;");
+		$("#cash").attr("style","padding-top:60px;margin: 1em 0 -40px 0;");
+		$("#grade").attr("style","padding-top:60px;margin: 1em 0 -40px 0;");
+		$("#english").attr("style","padding-top:60px;margin: 1em 0 -40px 0;");
+		$("#library").attr("style","padding-top:60px;margin: 1em 0 -40px 0;");
+		$("#sutuo").attr("style","padding-top:60px;margin: 1em 0 -40px 0;");
+		$("#n1").attr("style","padding-top:60px;margin: 1em 0 -40px 0;");
+		$("#n2").attr("style","padding-top:60px;margin: 1em 0 -40px 0;");
+	}
+</script>
 </html>

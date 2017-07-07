@@ -18,37 +18,18 @@
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
 <link href="css/table.css" rel='stylesheet' type='text/css' />
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/form.css">
 <script type="text/javascript" src="js/jquery.js"></script>
 </head>
 
-<body class="body1">
-	<div class="title">历史借阅</div>
-	<table id="Main">
-		<tr class="tbTitle">
-			<th>条码号</th>
-			<th>书名</th>
-			<th>作者</th>
-			<th>借阅时间</th>
-			<th>已归还时间</th>
-			<th>馆藏地</th>
-		</tr>
-		<c:forEach var="bookBollowed" items="${bookBolloweds}">
-			<tr class="tbContext">
-				<td>${bookBollowed.barId}</td>
-				<td>${bookBollowed.name}</td>
-				<td>${bookBollowed.author}</td>
-				<td>${bookBollowed.borrowedTime}</td>
-				<td>${bookBollowed.returnTime}</td>
-				<td>${bookBollowed.location}</td>
-			</tr>
-		</c:forEach>
-	</table>
-<script type="text/javascript">
-	var noHisData = "${noHisData}";
-	if (noHisData != "") {
-		alert(noHisData);
-	}
-</script>
+<body>
+	<div class="d1">
+	  <form>
+		  <input type="text" placeholder="点击搜索图书">
+		  <button type="submit"></button>
+	  </form>
+	</div>
+	<div></div>
 </body>
-<script type="text/javascript" src="js/common.js"></script>
 </html>

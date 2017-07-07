@@ -18,15 +18,10 @@
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
 <link href="css/table.css" rel='stylesheet' type='text/css' />
-<script type="text/javascript">
-	var noGrades = "${noGrades}";
-	if (noGrades != "") {
-		alert(noGrades);
-	}
-</script>
+<script type="text/javascript" src="js/jquery.js"></script>
 </head>
 
-<body>
+<body class="body1">
 	<div class="title">素拓信息</div>
 	<table id="Main">
 		<tr class="tbTitle">
@@ -42,5 +37,12 @@
 		</tr>
 		</c:forEach>
 	</table>
+<script type="text/javascript">
+	var noGrades = "${noGrades}";
+	if (noGrades != "") {
+		alert(noGrades);
+	}
+</script>
 </body>
+<script type="text/javascript" src="js/common.js"></script>
 </html>

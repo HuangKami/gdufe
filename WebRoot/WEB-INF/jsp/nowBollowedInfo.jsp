@@ -18,15 +18,10 @@
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
 <link href="css/table.css" rel='stylesheet' type='text/css' />
-<script type="text/javascript">
-	var noNowData = "${noNowData}";
-	if (noNowData != "") {
-		alert(noNowData);
-	}
-</script>
+<script type="text/javascript" src="js/jquery.js"></script>
 </head>
 
-<body>
+<body class="body1">
 	<div class="title">当前借阅</div>
 	<table id="Main">
 		<tr class="tbTitle">
@@ -50,5 +45,11 @@
 			</tr>
 		</c:forEach>
 	</table>
+<script type="text/javascript">
+	var noNowData = "${noNowData}";
+	if (noNowData != "") {
+		alert(noNowData);
+	}
 </body>
+<script type="text/javascript" src="js/common.js"></script>
 </html>
