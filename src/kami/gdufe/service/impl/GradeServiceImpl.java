@@ -15,6 +15,7 @@ import org.springframework.util.MultiValueMap;
 
 import kami.gdufe.model.EnglishGrade;
 import kami.gdufe.model.Grade;
+import kami.gdufe.model.PageBean;
 import kami.gdufe.model.User;
 import kami.gdufe.service.GradeService;
 
@@ -95,6 +96,9 @@ public class GradeServiceImpl extends BaseServiceImpl implements GradeService {
 	 */
 	@Override
 	public String getGPA(List<Grade> grades) {
+		if(grades == null || grades.size() ==0) {
+			return "0";
+		}
 		Double gpa = 0.0;
 		Double totalCredit = 0.0;
 		for (Grade grade : grades) {
@@ -182,6 +186,23 @@ public class GradeServiceImpl extends BaseServiceImpl implements GradeService {
 		return null;
 	}
 	
+	/**
+	 * 获取分页信息
+	 * @param user
+	 * @param stu_time
+	 * @param pageNow
+	 * @return
+	 */
+	@Override
+	public PageBean getPageBean(User user, String stu_time, Integer pageNow) {
+		PageBean pageBean = new PageBean();
+		if(getGrades(user, stu_time) != null) {
+			pageBean.setPageNow(pageNow);
+			pageBean.setTotalCount(getGrades(user, stu_time).size());
+		}
+		return pageBean;
+	}
+	
 	@Override
 	public void clear(User user) {
 		if(gradesMap.containsKey(user.getSno())) {
@@ -190,5 +211,20 @@ public class GradeServiceImpl extends BaseServiceImpl implements GradeService {
 		if(englishGradeMap.containsKey(user.getSno())) {
 			englishGradeMap.remove(user.getSno());
 		}
+	}
+
+	/**
+	 * 获取分页成绩
+	 */
+	@Override
+	public List<Grade> getGrades(User sessionUser, String stu_time, Integer pageNow) {
+		List<Grade> result = new ArrayList<Grade>();
+		List<Grade> grades = getGrades(sessionUser, stu_time);
+		if(grades != null && grades.size() > 0) {
+			for (int i = 10 * (pageNow - 1);i < 10 * (pageNow - 1) + 10 && i < grades.size(); i++) {
+				result.add(grades.get(i));
+			}
+		}
+		return result;
 	}
 }

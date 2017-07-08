@@ -6,11 +6,12 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import kami.gdufe.model.EnglishGrade;
 import kami.gdufe.model.Grade;
+import kami.gdufe.model.PageBean;
 import kami.gdufe.service.GradeService;
 
 @Controller
@@ -25,6 +26,11 @@ public class GradeController extends BaseController {
 	public String index() {
 		return "grade";
 	}
+	
+	@RequestMapping("english")
+	public String englishIndex() {
+		return "english";
+	}
 
 	/**
 	 * 获取成绩
@@ -34,16 +40,28 @@ public class GradeController extends BaseController {
 	 * @param stu_time
 	 * @return
 	 */
+	@ResponseBody
 	@RequestMapping("/gradeInfo")
-	public String getGrades(HttpServletRequest request, Model model, String stu_time) {
-		List<Grade> grades = gradeServie.getGrades(getSessionUser(request), stu_time);
-		if (grades != null && grades.size() > 0) {
-			model.addAttribute("grades", grades);
-			model.addAttribute("gpa", gradeServie.getGPA(grades));
-		} else {
-			model.addAttribute("noGrades", "卧槽，查询不到成绩啊");
-		}
-		return "gradesInfo";
+	public List<Grade> getGrades(HttpServletRequest request, String stu_time, Integer pageNow) {
+		return gradeServie.getGrades(getSessionUser(request), stu_time, pageNow);
+	}
+	
+	/**
+	 * 获取GPA
+	 */
+	@ResponseBody
+	@RequestMapping("/getGpa")
+	public String getGPA(HttpServletRequest request, String stu_time) {
+		return gradeServie.getGPA(gradeServie.getGrades(getSessionUser(request), stu_time));
+	}
+	
+	/**
+	 * 获取分页信息
+	 */
+	@ResponseBody
+	@RequestMapping("/getGradePage")
+	public PageBean getPageBean(HttpServletRequest request, String stu_time, Integer pageNow) {
+		return gradeServie.getPageBean(getSessionUser(request), stu_time, pageNow);
 	}
 
 	/**
@@ -53,14 +71,9 @@ public class GradeController extends BaseController {
 	 * @param model
 	 * @return
 	 */
+	@ResponseBody
 	@RequestMapping("/englishGradeInfo")
-	public String getGrades(HttpServletRequest request, Model model, String zkzh, String xm) {
-		EnglishGrade englishGrade = gradeServie.getEnglishGrades(getSessionUser(request), zkzh, xm);
-		if (englishGrade != null) {
-			model.addAttribute("englishGrade", englishGrade);
-		} else {
-			model.addAttribute("noEnglishGrades", "卧槽，查询不到四六级成绩啊");
-		}
-		return "englishGradeInfo";
+	public EnglishGrade getGrades(HttpServletRequest request, String zkzh, String xm) {
+		return gradeServie.getEnglishGrades(getSessionUser(request), zkzh, xm);
 	}
 }

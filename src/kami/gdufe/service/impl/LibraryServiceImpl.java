@@ -15,6 +15,7 @@ import org.springframework.util.MultiValueMap;
 import kami.gdufe.model.BookBollowed;
 import kami.gdufe.model.BookInfo;
 import kami.gdufe.model.BookLocation;
+import kami.gdufe.model.PageBean;
 import kami.gdufe.model.User;
 import kami.gdufe.service.LibraryService;
 
@@ -146,7 +147,22 @@ public class LibraryServiceImpl extends BaseServiceImpl implements LibraryServic
 	}
 	
 	/**
-	 * 获取历史借阅
+	 * 获取分页历史借阅
+	 */
+	@Override
+	public List<BookBollowed> getHisBolloweds(User sessionUser, Integer pageNow) {
+		List<BookBollowed> result = new ArrayList<BookBollowed>();
+		List<BookBollowed> hisBolloweds = getHisBolloweds(sessionUser);
+		if(hisBolloweds != null && hisBolloweds.size() > 0) {
+			for (int i = 10 * (pageNow - 1);i < 10 * (pageNow - 1) + 10 && i < hisBolloweds.size(); i++) {
+				result.add(hisBolloweds.get(i));
+			}
+		}
+		return result;
+	}
+	
+	/**
+	 * 获取当前借阅
 	 * @param user
 	 * @return
 	 */
@@ -160,6 +176,53 @@ public class LibraryServiceImpl extends BaseServiceImpl implements LibraryServic
 			nowBollowedMap.put(user.getSno(), nowBolloweds);
 		}
 		return nowBolloweds;
+	}
+	
+	/**
+	 * 获取历史借阅分页信息
+	 * @param user
+	 * @param pageNow
+	 * @return
+	 */
+	@Override
+	public PageBean getHisPageBean(User user, Integer pageNow) {
+		PageBean pageBean = new PageBean();
+		if(getHisBolloweds(user) != null) {
+			pageBean.setPageNow(pageNow);
+			pageBean.setTotalCount(getHisBolloweds(user).size());
+		}
+		return pageBean;
+	}
+	
+	/**
+	 * 获取分页当前借阅
+	 */
+	@Override
+	public List<BookBollowed> getNowBolloweds(User sessionUser, Integer pageNow) {
+		List<BookBollowed> result = new ArrayList<BookBollowed>();
+		List<BookBollowed> nowBolloweds = getNowBolloweds(sessionUser);
+		if(nowBolloweds != null && nowBolloweds.size() > 0) {
+			for (int i = 10 * (pageNow - 1);i < 10 * (pageNow - 1) + 10 && i < nowBolloweds.size(); i++) {
+				result.add(nowBolloweds.get(i));
+			}
+		}
+		return result;
+	}
+	
+	/**
+	 * 获取当前借阅分页信息
+	 * @param user
+	 * @param pageNow
+	 * @return
+	 */
+	@Override
+	public PageBean getNowPageBean(User user, Integer pageNow) {
+		PageBean pageBean = new PageBean();
+		if(getNowBolloweds(user) != null) {
+			pageBean.setPageNow(pageNow);
+			pageBean.setTotalCount(getNowBolloweds(user).size());
+		}
+		return pageBean;
 	}
 	
 	/**
@@ -212,6 +275,38 @@ public class LibraryServiceImpl extends BaseServiceImpl implements LibraryServic
 			return bookBolloweds;
 		}
 		return null;
+	}
+	
+	/**
+	 * 获取分页书籍信息
+	 */
+	@Override
+	public List<BookInfo> getBookInfo(User sessionUser, String bookName, Integer pageNow) {
+		List<BookInfo> result = new ArrayList<BookInfo>();
+		List<BookInfo> bookInfos = getBookInfo(sessionUser, bookName);
+		if(bookInfos != null && bookInfos.size() > 0) {
+			for (int i = 10 * (pageNow - 1);i < 10 * (pageNow - 1) + 10 && i < bookInfos.size(); i++) {
+				result.add(bookInfos.get(i));
+			}
+		}
+		return result;
+	}
+	
+	/**
+	 * 获取分页信息
+	 * @param user
+	 * @param stu_time
+	 * @param pageNow
+	 * @return
+	 */
+	@Override
+	public PageBean getPageBean(User user, String bookName, Integer pageNow) {
+		PageBean pageBean = new PageBean();
+		if(getBookInfo(user, bookName) != null) {
+			pageBean.setPageNow(pageNow);
+			pageBean.setTotalCount(getBookInfo(user, bookName).size());
+		}
+		return pageBean;
 	}
 	
 	@Override

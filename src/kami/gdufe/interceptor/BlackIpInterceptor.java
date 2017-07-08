@@ -12,7 +12,7 @@ import kami.gdufe.dao.impl.BlackListDaoImpl;
 import kami.gdufe.utils.GetApplicationContext;
 
 public class BlackIpInterceptor implements HandlerInterceptor {
-	private Integer times = 30;
+	private Integer times = 50;
 
 	/**
 	 * 过滤拦截黑名单IP
