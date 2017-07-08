@@ -9,7 +9,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<base href="<%=basePath%>">
 
 <title>广财突突突</title>
 <meta http-equiv="pragma" content="no-cache">
@@ -17,15 +16,15 @@
 <meta http-equiv="expires" content="0">
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
-<link href="css/table.css" rel='stylesheet' type='text/css' />
-<script type="text/javascript" src="js/jquery.js"></script>
+<link href="../css/table.css" rel='stylesheet' type='text/css' />
+<script type="text/javascript" src="../js/jquery.js"></script>
 </head>
 
 <body class="body1">
+	<a href="<%=basePath%>index"><button class='subbtn' style="width: 150px; height: 50px; position: absolute;" type='button'>返回主界面</button></a>
 	<div class="title">当前借阅</div>
 	<table id="Main">
 		<tr class="tbTitle">
-			<th>条码号</th>
 			<th>书名</th>
 			<th>作者</th>
 			<th>借阅时间</th>
@@ -35,7 +34,6 @@
 		</tr>
 		<c:forEach var="bookBollowed" items="${bookBolloweds}">
 			<tr class="tbContext">
-				<td>${bookBollowed.barId}</td>
 				<td>${bookBollowed.name}</td>
 				<td>${bookBollowed.author}</td>
 				<td>${bookBollowed.borrowedTime}</td>
@@ -45,11 +43,20 @@
 			</tr>
 		</c:forEach>
 	</table>
+	<center>
+		<div id="page" style="margin-top: 10px"></div>
+	</center>
 <script type="text/javascript">
 	var noNowData = "${noNowData}";
 	if (noNowData != "") {
 		alert(noNowData);
 	}
+	
+	if(${pageBean.totalPage} > 1) {
+		for (var i = 1; i <= ${pageBean.totalPage}; i++) {
+			$("#page").append("<a href='<%=basePath%>nowBollowed?pageNow=" + i +"'><button class='subbtn' type='button'>" + i + "</button></a>");
+		}
+	}
 </body>
-<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
 </html>

@@ -8,7 +8,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<base href="<%=basePath%>">
 
 <title>广财突突突</title>
 <meta http-equiv="pragma" content="no-cache">
@@ -16,9 +15,9 @@
 <meta http-equiv="expires" content="0">
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
-<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
-<link href="css/index.css" rel='stylesheet' type='text/css' />
-<script type="text/javascript" src="js/jquery.js"></script>
+<link href="../css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link href="../css/index.css" rel='stylesheet' type='text/css' />
+<script type="text/javascript" src="../js/jquery.js"></script>
 </head>
 
 <body class="body1">
@@ -28,7 +27,7 @@
 	<div class="services" id="services">
 		<div class="container">
 			<div class="wthree-services-grids">
-				<a href="userInfo">
+				<a href="<%=basePath%>userInfo">
 					<div class="col-sm-3 wthree-services">
 						<div class="wthree-services-grid">
 							<div class="wthree-services-info bg1">
@@ -40,7 +39,7 @@
 							</div>
 						</div>
 					</div>
-				</a> <a href="cashInfo">
+				</a> <a href="<%=basePath%>cashInfo">
 					<div class="col-sm-3 wthree-services">
 						<div class="wthree-services-grid">
 							<div class="wthree-services-info bg2">
@@ -52,7 +51,7 @@
 							</div>
 						</div>
 					</div>
-				</a> <a href="grade">
+				</a> <a href="<%=basePath%>grade">
 					<div class="col-sm-3 wthree-services">
 						<div class="wthree-services-grid">
 							<div class="wthree-services-info bg3">
@@ -64,7 +63,7 @@
 							</div>
 						</div>
 					</div>
-				</a> <a href="#" onclick="return false;">
+				</a> <a href="<%=basePath%>english">
 					<div class="col-sm-3 wthree-services">
 						<div class="wthree-services-grid">
 							<div class="wthree-services-info bg7">
@@ -81,7 +80,7 @@
 			</div>
 
 			<div class="wthree-services-grids services-grids1">
-				<a href="library">
+				<a href="<%=basePath%>library">
 					<div class="col-sm-3 wthree-services">
 						<div class="wthree-services-grid">
 							<div class="wthree-services-info bg4">
@@ -93,7 +92,7 @@
 							</div>
 						</div>
 					</div>
-				</a> <a href="sutuosInfo">
+				</a> <a href="<%=basePath%>sutuosInfo">
 					<div class="col-sm-3 wthree-services">
 						<div class="wthree-services-grid">
 							<div class="wthree-services-info bg5">
@@ -105,7 +104,7 @@
 							</div>
 						</div>
 					</div>
-				</a> <a href="#" onclick="return false;">
+				</a> <a href="<%=basePath%>course">
 					<div class="col-sm-3 wthree-services">
 						<div class="wthree-services-grid">
 							<div class="wthree-services-info bg6">

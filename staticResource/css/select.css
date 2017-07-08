@@ -1,0 +1,16 @@
+.body1 {
+	background: url(../images/bg2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.body2 {
+	background: url(../images/background1.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.div {
+  position: relative;
+  width: 300px;
+  margin: 100px auto;
+}

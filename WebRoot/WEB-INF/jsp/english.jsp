@@ -23,26 +23,25 @@
 		var stu_time = $("#stu_time").val();
 		$("#Main").html("");
 		$.ajax({
-			url : '<%=basePath%>courcesInfo',  
+			url : '<%=basePath%>englishGradeInfo',  
 			data : {
-				"stu_time" : stu_time,
+				"zkzh" : $("#zkzh").val(),
+				"xm" : $("#xm").val()
 			},
 			type : 'post',
 			dataType : 'json',
 			success : function(data) {
-				$("#Main").append("<tr class='tbTitle'><th>课程名</th><th>上课老师</th><th>上课周数</th><th>上课教室</th><th>周几</th><th>开始小节</th><th>结束小节</th></tr>");
-				var json = eval(data);
-				$.each(json, function(index, item) {
-					$("#Main").append("<tr id='" + index + "' class='tbContext'> ");
-					$("#"+ index).append("<td>" + json[index].name + "</td>");
-					$("#"+ index).append("<td>" + json[index].teacher + "</td>");
-					$("#"+ index).append("<td>" + json[index].period + "</td>");
-					$("#"+ index).append("<td>" + json[index].location + "</td>");
-					$("#"+ index).append("<td>" + json[index].dayInWeek + "</td>");
-					$("#"+ index).append("<td>" + json[index].startSec + "</td>");
-					$("#"+ index).append("<td>" + json[index].endSec + "</td>");
-					$("#Main").append("</tr>");
-				});
+				$("#Main").append("<tr class='tbTitle'><th>姓名</th><th>学校</th><th>英语四级/英语六级</th><th>准考证号</th><th>总分数</th><th>听力分数</th><th>阅读分数</th><th>写作分数</th></tr>");
+				$("#Main").append("<tr id='" + 1 + "' class='tbContext'> ");
+				$("#"+ 1).append("<td>" + data.time + "</td>");
+				$("#"+ 1).append("<td>" + data.school + "</td>");
+				$("#"+ 1).append("<td>" + data.level + "</td>");
+				$("#"+ 1).append("<td>" + data.cetId + "</td>");
+				$("#"+ 1).append("<td>" + data.score + "</td>");
+				$("#"+ 1).append("<td>" + data.listenScore + "</td>");
+				$("#"+ 1).append("<td>" + data.readScore + "</td>");
+				$("#"+ 1).append("<td>" + data.writeScore + "</td>");
+				$("#Main").append("</tr>");
 			}
 		});
 	}
@@ -52,17 +51,11 @@
 
 <body class="body1">
 	<a href="<%=basePath%>index"><button class='subbtn' style="width: 150px; height: 50px; position: absolute;" type='button'>返回主界面</button></a>
-	<div class="title">课程表</div>
-	<div class="d2">
+	<div class="title">四六级成绩</div>
+	<div class="d1">
 		<div class="div">
-			 <select id="stu_time" name="stu_time" style="width: 150px">
-				<option>2014-2015-1</option>
-				<option>2014-2015-2</option>
-				<option>2015-2016-1</option>
-				<option>2015-2016-2</option>
-				<option>2016-2017-1</option>
-				<option>2016-2017-2</option>
-			</select>
+			<input id="zkzh" type="text" placeholder="请输入准考证号">
+			<input id="xm" type="text" placeholder="请输入姓名">
 			<button type="button" onclick="search();"></button>
 		</div>
 	</div>

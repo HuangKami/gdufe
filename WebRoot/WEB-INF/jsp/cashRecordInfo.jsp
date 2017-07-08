@@ -9,7 +9,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<base href="<%=basePath%>">
 
 <title>广财突突突</title>
 <meta http-equiv="pragma" content="no-cache">
@@ -17,11 +16,12 @@
 <meta http-equiv="expires" content="0">
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
-<link href="css/table.css" rel='stylesheet' type='text/css' />
-<script type="text/javascript" src="js/jquery.js"></script>
+<link href="../css/table.css" rel='stylesheet' type='text/css' />
+<script type="text/javascript" src="../js/jquery.js"></script>
 </head>
 
 <body class="body1">
+	<a href="<%=basePath%>index"><button class='subbtn' style="width: 150px; height: 50px; position: absolute;" type='button'>返回主界面</button></a>
 	<div class="title">校园卡交易记录</div>
 	<table id="Main">
 		<tr class="tbTitle">
@@ -46,5 +46,5 @@
 	}
 </script>
 </body>
-<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
 </html>

@@ -20,59 +20,47 @@
 <script type="text/javascript" src="../js/jquery.js"></script>
 <script type="text/javascript">
 	function search(page) {
-		var stu_time = $("#stu_time").val();
+		bookName = $("#search").val();
+		if (bookName == "") {
+			alert("请输入图书名称");
+			return false;
+		}
+		
 		$("#Main").html("");
 		$.ajax({
-			url : '<%=basePath%>gradeInfo',
+			url : '<%=basePath%>bookInfo',  
 			data : {
-				"stu_time" : stu_time,
+				"bookName" : bookName,
 				"pageNow" : page,
 			},
 			type : 'post',
 			dataType : 'json',
 			success : function(data) {
-				$("#Main").append("<tr class='tbTitle'><th>开课学期</th><th>课程编号</th><th>课程名称</th><th>平时成绩</th><th>实验成绩</th><th>期末成绩</th><th>成绩</th><th>学分</th></tr>");
+				$("#Main").append("<tr class='tbTitle'><th>书名</th><th>序列号</th><th>库藏总数量</th><th>可借数量</th><th>作者</th><th>出版社</th><th>查看详细内容</th></tr>");
 				var json = eval(data);
 				$.each(json, function(index, item) {
 					$("#Main").append("<tr id='" + index + "' class='tbContext'> ");
-					$("#" + index).append("<td>" + json[index].time + "</td>");
-					$("#" + index).append("<td>" + json[index].classCode + "</td>");
-					$("#" + index).append("<td>" + json[index].name + "</td>");
-					$("#" + index).append("<td>" + json[index].dailyScore + "</td>");
-					$("#" + index).append("<td>" + json[index].expScore + "</td>");
-					$("#" + index).append("<td>" + json[index].paperScore + "</td>");
-					$("#" + index).append("<td>" + json[index].score + "</td>");
-					$("#" + index).append("<td>" + json[index].credit + "</td>");
+					$("#"+ index).append("<td>" + json[index].name + "</td>");
+					$("#"+ index).append("<td>" + json[index].serial + "</td>");
+					$("#"+ index).append("<td>" + json[index].numAll + "</td>");
+					$("#"+ index).append("<td>" + json[index].numCan + "</td>");
+					$("#"+ index).append("<td>" + json[index].author + "</td>");
+					$("#"+ index).append("<td>" + json[index].publisher + "</td>");
+					$("#"+ index).append("<td><a href='<%=basePath%>bookLocation?macno=" + json[index].macno + "'>查看</a></td>");
 					$("#Main").append("</tr>");
 				});
-				getGpa();
 				getPage(page);
 			}
 		});
 	}
-
-	function getGpa() {
-		var stu_time = $("#stu_time").val();
-		$.ajax({
-			url : '<%=basePath%>getGpa',
-			type : 'post',
-			data : {
-				"stu_time" : stu_time,
-			},
-			dataType : 'json',
-			success : function(data) {
-				$("#gpa").text("平均绩点：" + data);
-			}
-		});
-	}
-
+	
 	function getPage(page) {
-		var stu_time = $("#stu_time").val();
+		var bookName = $("#search").val();
 		$.ajax({
-			url : '<%=basePath%>getGradePage',
+			url : '<%=basePath%>getBookPage',
 			type : 'post',
 			data : {
-				"stu_time" : stu_time,
+				"bookName" : bookName,
 				"pageNow" : page,
 			},
 			dataType : 'json',
@@ -81,7 +69,7 @@
 				var json = eval(data);
 				if(json.totalPage > 1) {
 					for (var i = 1; i <= json.totalPage; i++) {
-						$("#page").append("<button class='subbtn' type='button' onclick=search(" + i + "," + stu_time + ");>" + i + "</button>")
+						$("#page").append("<button class='subbtn' type='button' onclick=search(" + i + ");>" + i + "</button>")
 					}
 				}
 
@@ -93,24 +81,14 @@
 
 <body class="body1">
 	<a href="<%=basePath%>index"><button class='subbtn' style="width: 150px; height: 50px; position: absolute;" type='button'>返回主界面</button></a>
-	<div class="title">期末成绩</div>
-	<div class="d2">
+	<div class="title">搜索图书</div>
+	<div class="d1">
 		<div class="div">
-			<select id="stu_time" name="stu_time" style="width: 150px">
-				<option>2014-2015-1</option>
-				<option>2014-2015-2</option>
-				<option>2015-2016-1</option>
-				<option>2015-2016-2</option>
-				<option>2016-2017-1</option>
-				<option>2016-2017-2</option>
-				<option>整个大学</option>
-			</select>
+			<input id="search" type="text" placeholder="点击搜索图书">
 			<button type="button" onclick="search(1);"></button>
 		</div>
 	</div>
-	<h3 id="gpa" style="text-align: center;color: rgba(150,255,255,0.95);"></h3>
-	<table id="Main">
-	</table>
+	<table id="Main"></table>
 	<center>
 		<div id="page" style="margin-top: 10px"></div>
 	</center>

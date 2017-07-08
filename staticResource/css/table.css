@@ -1,0 +1,136 @@
+.body1 {
+	background: url(../images/bg2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.body2 {
+	background: url(../images/background1.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.title {
+	margin-top: 10px;
+	font-weight: 800;
+    text-align: center;
+    padding: 10px 0 10px 0;
+    font: 30px "微软雅黑", Arial, Helvetica, sans-serif;
+    color: rgba(0,93,93,0.8);
+}
+
+#Main {
+	width: 950px;
+	text-align: center;
+	margin: 0 auto;
+}
+table {
+    width: 900px;
+    border-collapse: collapse;
+    text-align: left;
+    margin: 10px 5px 5px 10px;
+    cursor: default;
+    border: 1px solid #ccc;
+    background: #000;
+    margin-top:20px;
+    box-shadow: 0px 0px 10px rgba(0,255,255,0.75);
+    border: 1px solid rgba(127,255,255,0.75);
+    -webkit-box-shadow: 0px 0px 8px rgba(0,255,255,0.75);
+    -moz-box-shadow: 0px 0px 8px rgba(0,255,255,0.75);
+    box-shadow: 0px 0px 8px rgba(0,255,255,0.75);
+}
+.tbTitle>th {
+    font-weight: 300;
+    text-align: center;
+    padding: 10px 0 10px 0;
+    font: 15px "微软雅黑", Arial, Helvetica, sans-serif;
+    background-color: rgba(0,93,93,0.8);
+    color: #efefef;
+    text-shadow: 0px 0px 20px rgba(127,255,255,1);
+}
+th, td {
+    border: 1px solid rgba(127,255,255,0.55);
+     
+}
+.tbContext:hover {
+    background-color: rgba(0,99,99,0.9) !important;
+}
+td,td>a {
+    font: 13px "微软雅黑", Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding: 6px 0 6px 0;
+    color: rgba(127,255,255,0.75);
+    text-shadow: 0px 0px 20px rgba(0,255,255,0.75);/*-webkit-filter: drop-shadow(0px 0px 20px rgba(0,255,255,0.95));
+    -moz-filter: drop-shadow(0px 0px 20px rgba(0,255,255,0.95));
+    -o-filter: drop-shadow(0px 0px 20px rgba(0,255,255,0.95));
+    -ms-filter: drop-shadow(0px 0px 20px rgba(0,255,255,0.95));
+    filter: drop-shadow(0px 0px 20px rgba(0,255,255,0.95));*/
+}
+.tbContext:nth-child(2n 1) {
+    background-color: rgba(0,127,127,0.1);
+}
+
+.div {
+  position: relative;
+  width: 400px;
+  margin: 10px auto 0;
+}
+.d1 input {
+  width: 100%;
+  height: 42px;
+  padding-left: 10px;
+  border: 2px solid #7BA7AB;
+  border-radius: 5px;
+  outline: none;
+  background: #F9F0DA;
+  color: #9E9C9C;
+}
+
+.d1 button {
+  position: absolute; 
+  top: 0;
+  right: 0px;
+  width: 50px;
+  height: 42px;
+  border: none;
+  background: #7BA7AB;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+.d1 button:before {
+  content: "搜索";
+  font-family: FontAwesome;
+  font-size: 16px;
+  color: #F9F0DA;
+}
+
+.d2 select {
+  width: 100%;
+  height: 42px;
+  padding-left: 10px;
+  border: 2px solid #7BA7AB;
+  border-radius: 5px;
+  outline: none;
+  background: #F9F0DA;
+  color: #9E9C9C;
+  margin-left:95px;
+}
+.d2 button {
+  position: absolute; 
+  top: 0;
+  right: 105px;
+  width: 50px;
+  height: 42px;
+  border: none;
+  background: #7BA7AB;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+.d2 button:before {
+  content: "查询";
+  font-family: FontAwesome;
+  font-size: 16px;
+  color: #F9F0DA;
+}
+
+.subbtn{ padding:3px 12px; margin:2px; background:#04B5AF; color:#fff; border-radius:3px; box-shadow:0 1px 1px #ddd;cursor:pointer;border:0px;border-bottom-style:none;border-top-style:none;border-left-style:none;border-right-style:none;}

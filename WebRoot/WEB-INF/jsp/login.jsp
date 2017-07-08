@@ -8,7 +8,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<base href="<%=basePath%>">
 
 <title>广财突突突登录界面</title>
 <meta http-equiv="pragma" content="no-cache">
@@ -16,8 +15,8 @@
 <meta http-equiv="expires" content="0">
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
-<link href="css/style.css" rel='stylesheet' type='text/css' />
-<script type="text/javascript" src="js/jquery.js"></script>
+<link href="../css/style.css" rel='stylesheet' type='text/css' />
+<script type="text/javascript" src="../js/jquery.js"></script>
 </head>
 
 <body class="body1">
@@ -29,9 +28,9 @@
 		</div>
 		<div class="clear"></div>
 		<div class="avtar">
-			<img src="images/avtar.png" />
+			<img src="../images/avtar.png" />
 		</div>
-		<form action="index" method="post">
+		<form action="<%=basePath%>index" method="post">
 			<input type="text" id="sno" name="sno" class="text" placeholder="请输入学号">
 			<div class="key">
 				<input type="password" id="pwd" name="pwd" placeholder="请输入密码">
